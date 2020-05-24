@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DarkModeSample.Resources;
+using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace DarkModeSample
 {
@@ -9,6 +9,8 @@ namespace DarkModeSample
         public App()
         {
             InitializeComponent();
+
+            ApplyTheme();
 
             MainPage = new MainPage();
         }
@@ -23,6 +25,18 @@ namespace DarkModeSample
 
         protected override void OnResume()
         {
+        }
+
+        public static void ApplyTheme()
+        {
+            if (AppInfo.RequestedTheme == AppTheme.Dark)
+            {
+                App.Current.Resources = new DarkTheme();
+            }
+            else
+            {
+                App.Current.Resources = new LightTheme();
+            }
         }
     }
 }
