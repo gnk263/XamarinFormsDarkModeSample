@@ -6,14 +6,16 @@
              mc:Ignorable="d"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
-             x:Class="DarkModeSample.MainPage">
+             x:Class="DarkModeSample.MainPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <StackLayout>
-        <SearchBar />
         <Label Text="Welcome to Xamarin.Forms!"
+               TextColor="{DynamicResource PrimaryTextColor}"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" />
         <Button Text="Apple"
+                BackgroundColor="{DynamicResource ButtonBackgroundColor}"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand" />
     </StackLayout>
