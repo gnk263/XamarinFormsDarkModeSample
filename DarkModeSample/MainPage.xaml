@@ -9,15 +9,25 @@
              x:Class="DarkModeSample.MainPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="FooButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ButtonBackgroundColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <StackLayout>
-        <Label Text="Welcome to Xamarin.Forms!"
-               TextColor="{DynamicResource PrimaryTextColor}"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+        <Label Text="Welcome to Xamarin.Forms!" />
         <Button Text="Apple"
-                BackgroundColor="{DynamicResource ButtonBackgroundColor}"
-                HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand" />
+                Style="{StaticResource FooButtonStyle}" />
     </StackLayout>
 
 </ContentPage>
